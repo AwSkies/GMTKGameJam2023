@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class ProjectileFirer : MonoBehaviour
 {
-    public Projectile Fire(Projectile projectilePrefab, Vector2 source, Vector2 direction)
+    public GameObject Fire(GameObject projectilePrefab, Vector2 direction)
     {
-        return Instantiate(projectilePrefab, source, Quaternion.LookRotation(direction, new Vector2()));
+        GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        projectile.GetComponent<Projectile>().direction = direction.normalized;
+        return projectile;
+    }
+
+    public GameObject FireAt(GameObject projectilePrefab, Vector2 direction)
+    {
+        return Fire(projectilePrefab, (direction - new Vector2(transform.position.x, transform.position.y)).normalized);
     }
 }
