@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private Camera cam;
     [SerializeField]
     private Rigidbody2D rigidBody;
 
@@ -13,6 +14,8 @@ public class Projectile : MonoBehaviour
     private float speed;
     [SerializeField]
     private float gravity;
+    [SerializeField]
+    private float maxDistance;
 
     public Vector2 direction;
 
@@ -20,6 +23,16 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         rigidBody.gravityScale = gravity;
+        cam = Camera.main;
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        if (Vector3.Distance(transform.position, cam.transform.position) > 100)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void FixedUpdate()

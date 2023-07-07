@@ -57,7 +57,7 @@ public class KaijuController : MonoBehaviour
     private bool firing;
 
     #region Enabling and disabling controls on enable and disable
-    void OnEnable() 
+    void OnEnable()
     {
         movement.Enable();
         dash.Enable();
@@ -79,13 +79,13 @@ public class KaijuController : MonoBehaviour
     #endregion
 
     // Start is called before the first frame update
-    void Start() 
+    void Start()
     {
         currentSpeed = speed;
     }
 
     // Update is called once per frame
-    void Update() 
+    void Update()
     {
         movementDirection = movement.ReadValue<Vector2>();
         // Dashing
@@ -108,9 +108,13 @@ public class KaijuController : MonoBehaviour
         {
             firing = true;
             if (fireDirectionController.ReadValue<Vector2>() == Vector2.zero)
+            {
                 projectileFirer.FireAt(projectilePrefab, Camera.main.ScreenToWorldPoint(fireDirectionMouse.ReadValue<Vector2>()));
+            }
             else
+            {
                 projectileFirer.Fire(projectilePrefab, fireDirectionController.ReadValue<Vector2>());
+            }
             Invoke("ResetFireCooldown", fireCooldown);
         }
     }
@@ -121,22 +125,22 @@ public class KaijuController : MonoBehaviour
     }
 
     #region Methods to reset cooldowns of actions
-    private void ResetMovementSpeed() 
+    private void ResetMovementSpeed()
     {
         currentSpeed = speed;
     }
 
-    private void ResetDashCooldown() 
+    private void ResetDashCooldown()
     {
         dashing = false;
     }
 
-    private void ResetMeleeCooldown() 
+    private void ResetMeleeCooldown()
     {
         meleeing = false;
     }
-    
-    private void ResetFireCooldown() 
+
+    private void ResetFireCooldown()
     {
         firing = false;
     }
