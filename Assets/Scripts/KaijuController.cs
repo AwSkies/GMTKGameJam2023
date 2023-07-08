@@ -103,7 +103,8 @@ public class KaijuController : MonoBehaviour
         if (!meleeing)
         {
             meleeing = true;
-            slash.transform.localPosition = aimDirection.normalized;
+            slash.transform.localPosition = aimDirection;
+            slash.transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(aimDirection.x, aimDirection.y) * Mathf.Rad2Deg, Vector3.forward);
             slash.SetActive(true);
             Invoke("ResetMeleeCooldown", meleeCooldown);
         }
@@ -114,7 +115,7 @@ public class KaijuController : MonoBehaviour
         if (!firing)
         {
             firing = true;
-            projectileFirer.Fire(projectilePrefab, aimDirection);
+            projectileFirer.FireInDirection(projectilePrefab, aimDirection);
             Invoke("ResetFireCooldown", fireCooldown);
         }
     }
