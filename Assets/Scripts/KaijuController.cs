@@ -12,20 +12,13 @@ public class KaijuController : MonoBehaviour
     private ProjectileFirer projectileFirer;
     #endregion
 
-    #region InputAction references
     [SerializeField]
-    private InputAction movement;
+    private PlayerInput playerInput;
+
     [SerializeField]
-    private InputAction dash;
+    private GameObject slash;
     [SerializeField]
-    private InputAction melee;
-    [SerializeField]
-    private InputAction fireDirectionMouse;
-    [SerializeField]
-    private InputAction fireDirectionController;
-    [SerializeField]
-    private InputAction fire;
-    #endregion
+    private Animator slashAnimator;
 
     #region Dash parameters
     [SerializeField]
@@ -51,32 +44,11 @@ public class KaijuController : MonoBehaviour
     #endregion
 
     private Vector2 movementDirection = new Vector2();
+    private Vector2 aimDirection = new Vector2();
     private float currentSpeed;
     private bool dashing;
     private bool meleeing;
     private bool firing;
-
-    #region Enabling and disabling controls on enable and disable
-    void OnEnable()
-    {
-        movement.Enable();
-        dash.Enable();
-        melee.Enable();
-        fireDirectionMouse.Enable();
-        fireDirectionController.Enable();
-        fire.Enable();
-    }
-
-    void OnDisable()
-    {
-        movement.Disable();
-        dash.Disable();
-        melee.Disable();
-        fireDirectionMouse.Disable();
-        fireDirectionController.Disable();
-        fire.Disable();
-    }
-    #endregion
 
     // Start is called before the first frame update
     void Start()
@@ -87,42 +59,66 @@ public class KaijuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movementDirection = movement.ReadValue<Vector2>();
-        // Dashing
-        if (dash.triggered && !dashing)
-        {
-            dashing = true;
-            currentSpeed = dashSpeed;
-            Invoke("ResetMovementSpeed", dashTime);
-            Invoke("ResetDashCooldown", dashCooldown);
-        }
-        // Meleeing
-        if (melee.triggered && !meleeing)
-        {
-            meleeing = true;
-            // Do the attack thing here
-            Invoke("ResetMeleeCooldown", meleeCooldown);
-        }
-        // Firing a projectile
-        if (fire.triggered && !firing)
-        {
-            firing = true;
-            if (fireDirectionController.ReadValue<Vector2>() == Vector2.zero)
-            {
-                projectileFirer.FireAt(projectilePrefab, Camera.main.ScreenToWorldPoint(fireDirectionMouse.ReadValue<Vector2>()));
-            }
-            else
-            {
-                projectileFirer.Fire(projectilePrefab, fireDirectionController.ReadValue<Vector2>());
-            }
-            Invoke("ResetFireCooldown", fireCooldown);
-        }
+
     }
 
     void FixedUpdate()
     {
         rigidBody.velocity = movementDirection * currentSpeed;
     }
+
+    #region Input action listeners
+    public void OnMove(InputValue value)
+    {
+        movementDirection = value.Get<Vector2>();
+    }
+
+    public void OnAim(InputValue value)
+    {
+        Vector2 aim = value.Get<Vector2>();
+        // Correct if the scheme is KBM
+        if (playerInput.currentControlScheme == "KBM")
+        {
+            aim = Camera.main.ScreenToWorldPoint(aim);
+        }
+        if (aim != Vector2.zero)
+        {
+            aimDirection = aim.normalized;
+        }
+    }
+
+    public void OnDash()
+    {
+        if (!dashing)
+        {
+            dashing = true;
+            currentSpeed = dashSpeed;
+            Invoke("ResetMovementSpeed", dashTime);
+            Invoke("ResetDashCooldown", dashCooldown);
+        }
+    }
+
+    public void OnMelee()
+    {
+        if (!meleeing)
+        {
+            meleeing = true;
+            slash.transform.localPosition = aimDirection.normalized;
+            slash.SetActive(true);
+            Invoke("ResetMeleeCooldown", meleeCooldown);
+        }
+    }
+
+    public void OnFire()
+    {
+        if (!firing)
+        {
+            firing = true;
+            projectileFirer.Fire(projectilePrefab, aimDirection);
+            Invoke("ResetFireCooldown", fireCooldown);
+        }
+    }
+    #endregion
 
     #region Methods to reset cooldowns of actions
     private void ResetMovementSpeed()
