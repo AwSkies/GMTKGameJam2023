@@ -9,8 +9,6 @@ public class Projectile : MonoBehaviour
     private Rigidbody2D rigidBody;
 
     [SerializeField]
-    private Sprite sprite;
-    [SerializeField]
     private float speed;
     [SerializeField]
     private float maxDistance;

@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2225066409732270279}
   - component: {fileID: 4516415067418354579}
-  - component: {fileID: 3436070122914468343}
+  - component: {fileID: -3052065112605155530}
+  - component: {fileID: 7376865632939992772}
   - component: {fileID: 3644657465953879826}
   - component: {fileID: -2866594184152025102}
   m_Layer: 0
@@ -87,7 +88,42 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!50 &3436070122914468343
+--- !u!58 &-3052065112605155530
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740808939449537709}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
+--- !u!50 &7376865632939992772
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
@@ -126,8 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ec091bfa52d9e343ad8f0c01e56b94c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigidBody: {fileID: 3436070122914468343}
-  sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
+  rigidBody: {fileID: 7376865632939992772}
+  sprite: {fileID: 0}
   speed: 20
   maxDistance: 100
   maxTime: 60
@@ -145,8 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 1
-  damage: 0
+  damage: 1
   invulnerable: 0
   damageAnimator: {fileID: 0}
-  deathParticleEmitter: {fileID: 0}
-  deathParticlesNumber: 0
+  deathParticleEmitter: {fileID: 4659250545514355410, guid: b8319395b07070f46905752c640b20bd, type: 3}
