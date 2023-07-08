@@ -18,6 +18,8 @@ public class KaijuController : MonoBehaviour
     private PlayerInput playerInput;
     [SerializeField]
     private GameObject slash;
+    [SerializeField]
+    private CapsuleCollider2D capsuleCollider;
     #endregion
 
     #region Dash parameters
@@ -56,11 +58,13 @@ public class KaijuController : MonoBehaviour
     private bool dashing;
     private bool meleeing;
     private bool firing;
+    private float colliderOffset;
 
     // Start is called before the first frame update
     void Start()
     {
         currentSpeed = speed;
+        colliderOffset = capsuleCollider.offset.x;
     }
 
     // Update is called once per frame
@@ -81,6 +85,7 @@ public class KaijuController : MonoBehaviour
         float vertical = firing || meleeing ? actionDirection.y : lookingDirection.y;
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
+        capsuleCollider.offset = new Vector2(horizontal == 0 ? 0 : -Mathf.Sign(horizontal) * colliderOffset, capsuleCollider.offset.y);
     }
 
     #region Input action listeners
