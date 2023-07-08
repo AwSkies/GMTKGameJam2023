@@ -49,6 +49,7 @@ public class KaijuController : MonoBehaviour
     private Vector2 movementDirection = new Vector2();
     private Vector2 aimDirection = new Vector2();
     private Vector2 actionDirection = new Vector2();
+    private Vector2 lastDirection = new Vector2();
     private float currentSpeed;
     private bool dashing;
     private bool meleeing;
@@ -68,11 +69,14 @@ public class KaijuController : MonoBehaviour
 
     void FixedUpdate()
     {
+        // Move character
         rigidBody.velocity = movementDirection * currentSpeed;
-        animator.SetBool("Moving", movementDirection.sqrMagnitude != 0);
+        // Set animation variables
+        animator.SetBool("Moving", movementDirection.sqrMagnitude != 0 || meleeing || firing);
         animator.SetBool("Dashing", dashing);
-        float horizontal = firing || meleeing ? actionDirection.x : movementDirection.x;
-        float vertical = firing || meleeing ? actionDirection.y : movementDirection.y;
+        Vector2 lookingDirection = movementDirection.sqrMagnitude == 0 ? lastDirection : movementDirection;
+        float horizontal = firing || meleeing ? actionDirection.x : lookingDirection.x;
+        float vertical = firing || meleeing ? actionDirection.y : lookingDirection.y;
         animator.SetFloat("Horizontal", horizontal);
         animator.SetFloat("Vertical", vertical);
     }
@@ -80,6 +84,7 @@ public class KaijuController : MonoBehaviour
     #region Input action listeners
     public void OnMove(InputValue value)
     {
+        lastDirection = movementDirection;
         movementDirection = value.Get<Vector2>();
     }
 
