@@ -113,7 +113,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!114 &3644657465953879826
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,5 +148,5 @@ MonoBehaviour:
   damage: 0
   invulnerable: 0
   damageAnimator: {fileID: 0}
-  deathParticles: {fileID: 0}
+  deathParticleEmitter: {fileID: 0}
   deathParticlesNumber: 0

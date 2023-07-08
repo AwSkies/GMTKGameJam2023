@@ -18,7 +18,6 @@ public class Entity : MonoBehaviour
     private int deathParticlesNumber;
 
     private int currentHealth;
-    private bool hit;
 
 
     // Start is called before the first frame update
@@ -30,23 +29,23 @@ public class Entity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        hit = false;
+
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
         Entity otherEntity = collision.gameObject.GetComponent<Entity>();
-        if (!gameObject.CompareTag(collision.gameObject.tag) && !hit)
+        Debug.Log("gameObject.tag: " + gameObject.tag + ", collision.gameObject.tag: " + collision.gameObject.tag);
+        if (!gameObject.CompareTag(collision.gameObject.tag))
         {
-            hit = true;
-            otherEntity.hit = true;
+            // Debug.Log(gameObject.name + " was hit by " + collision.gameObject.name + " and is" + (invulnerable ? "" : " not") + " invulnerable");
             TakeDamage(collision.gameObject.GetComponent<Entity>());
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        OnTriggerEnter2D(collision.otherCollider);
+        OnTriggerEnter2D(collision.collider);
     }
 
     protected void TakeDamage(Entity entity)
