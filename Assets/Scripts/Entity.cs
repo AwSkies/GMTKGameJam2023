@@ -14,12 +14,14 @@ public class Entity : MonoBehaviour
     private Animator damageAnimator;
     [SerializeField]
     private GameObject deathParticleEmitter;
+    public GameObject player;
 
     private int currentHealth;
 
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<KaijuController>().gameObject;
         currentHealth = maxHealth;
     }
 
@@ -56,7 +58,7 @@ public class Entity : MonoBehaviour
                 }
                 catch (UnassignedReferenceException)
                 {
-                    
+
                 }
             }
             if (currentHealth <= 0)

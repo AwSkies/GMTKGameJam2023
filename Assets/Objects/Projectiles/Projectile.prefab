@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 7376865632939992772}
-  sprite: {fileID: 0}
   speed: 20
   maxDistance: 100
   maxTime: 60
@@ -185,3 +184,4 @@ MonoBehaviour:
   invulnerable: 0
   damageAnimator: {fileID: 0}
   deathParticleEmitter: {fileID: 4659250545514355410, guid: b8319395b07070f46905752c640b20bd, type: 3}
+  player: {fileID: 0}
