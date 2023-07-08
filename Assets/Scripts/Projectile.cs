@@ -22,6 +22,7 @@ public class Projectile : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + 90, Vector3.forward);
     }
 
     // Update is called once per frame

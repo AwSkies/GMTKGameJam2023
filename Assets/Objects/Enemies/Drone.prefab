@@ -88,7 +88,8 @@ PrefabInstance:
       propertyPath: directions.Array.data[1]
       value: 
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4712103320114751752, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1138516918051623562, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
     - {fileID: 1377179464562880959, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
@@ -104,6 +105,11 @@ PrefabInstance:
 --- !u!50 &814883929708882545 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8114324763023333620, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+  m_PrefabInstance: {fileID: 8922989844222816901}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &4104180973332923680 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4836911238925301669, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
   m_PrefabInstance: {fileID: 8922989844222816901}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &8291359621163509348 stripped
@@ -125,6 +131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8692232031404783146}
   rigidBody: {fileID: 814883929708882545}
+  fireSource: {fileID: 4104180973332923680}
   movementSpeed: 1
   moving: 1
 --- !u!114 &5916315367054141938

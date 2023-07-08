@@ -9,6 +9,8 @@ public class Drone : MonoBehaviour
     [SerializeField]
     private Rigidbody2D rigidBody;
     private Entity entity;
+    [SerializeField]
+    private Transform fireSource;
 
     [SerializeField]
     private float movementSpeed;
@@ -39,5 +41,6 @@ public class Drone : MonoBehaviour
         animator.SetBool("Moving", moving);
         animator.SetFloat("Vertical", movementDirection.y);
         animator.SetFloat("Horizontal", movementDirection.x);    
+        fireSource.localPosition = movementDirection;
     }
 }

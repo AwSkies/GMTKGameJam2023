@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &7742915511347612840
+--- !u!1001 &8931373707653142115
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,14 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: -3052065112605155530, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
-      propertyPath: m_Radius
-      value: 0.07
-      objectReference: {fileID: 0}
     - target: {fileID: -2866594184152025102, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
-      propertyPath: deathParticleEmitter
-      value: 
-      objectReference: {fileID: 8056630777231743090, guid: 28ce2d36742fe284e914db08edc480a4, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2225066409732270279, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -61,45 +57,88 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4516415067418354579, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4516415067418354579, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 625777769, guid: 5c575ca5cb0313b44a43839b942c65dc, type: 3}
+      objectReference: {fileID: 746016781, guid: 4509a368c37a99043981437746270b1b, type: 3}
     - target: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_Name
-      value: DroneProjectile
+      value: KaijuProjectile
       objectReference: {fileID: 0}
     - target: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_Layer
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_TagString
       value: Untagged
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -3052065112605155530, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
-      insertIndex: 3
-      addedObject: {fileID: 8168719441982491508}
+      insertIndex: -1
+      addedObject: {fileID: 6920594498441870234}
+    - targetCorrespondingSourceObject: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 833898187271777453}
   m_SourcePrefab: {fileID: 100100000, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
---- !u!1 &1313304831289350149 stripped
+--- !u!1 &197888429837451982 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
-  m_PrefabInstance: {fileID: 7742915511347612840}
+  m_PrefabInstance: {fileID: 8931373707653142115}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &8168719441982491508
+--- !u!70 &6920594498441870234
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 197888429837451982}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 1.25, y: 0.64}
+  m_Direction: 1
+--- !u!95 &833898187271777453
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1313304831289350149}
+  m_GameObject: {fileID: 197888429837451982}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 0681d65430d71f242afdea2a340f683f, type: 2}
+  m_Controller: {fileID: 9100000, guid: 7a9f36bc10fb9b249bb29ecfc91c1487, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
