@@ -79,7 +79,7 @@ public class KaijuController : MonoBehaviour
         // Correct if the scheme is KBM
         if (playerInput.currentControlScheme == "KBM")
         {
-            aim = Camera.main.ScreenToWorldPoint(aim);
+            aim = Camera.main.ScreenToWorldPoint(aim) - transform.position;
         }
         if (aim != Vector2.zero)
         {
