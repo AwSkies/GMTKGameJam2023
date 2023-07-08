@@ -20,6 +20,9 @@ public class KaijuController : MonoBehaviour
     [SerializeField]
     private Animator slashAnimator;
 
+    [SerializeField]
+    private Animator animator;
+
     #region Dash parameters
     [SerializeField]
     private float speed;
@@ -45,6 +48,7 @@ public class KaijuController : MonoBehaviour
 
     private Vector2 movementDirection = new Vector2();
     private Vector2 aimDirection = new Vector2();
+    private Vector2 actionDirection = new Vector2();
     private float currentSpeed;
     private bool dashing;
     private bool meleeing;
@@ -65,6 +69,12 @@ public class KaijuController : MonoBehaviour
     void FixedUpdate()
     {
         rigidBody.velocity = movementDirection * currentSpeed;
+        animator.SetBool("Moving", movementDirection.sqrMagnitude != 0);
+        animator.SetBool("Dashing", dashing);
+        float horizontal = firing || meleeing ? actionDirection.x : movementDirection.x;
+        float vertical = firing || meleeing ? actionDirection.y : movementDirection.y;
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
     }
 
     #region Input action listeners
@@ -103,6 +113,7 @@ public class KaijuController : MonoBehaviour
         if (!meleeing)
         {
             meleeing = true;
+            actionDirection = aimDirection;
             slash.transform.localPosition = aimDirection;
             slash.transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(aimDirection.x, aimDirection.y) * Mathf.Rad2Deg, Vector3.forward);
             slash.SetActive(true);
@@ -115,6 +126,7 @@ public class KaijuController : MonoBehaviour
         if (!firing)
         {
             firing = true;
+            actionDirection = aimDirection;
             projectileFirer.FireInDirection(projectilePrefab, aimDirection);
             Invoke("ResetFireCooldown", fireCooldown);
         }
