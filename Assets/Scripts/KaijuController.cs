@@ -20,9 +20,6 @@ public class KaijuController : MonoBehaviour
     private GameObject slash;
     #endregion
 
-
-
-
     #region Dash parameters
     [SerializeField]
     private float speed;
@@ -39,6 +36,8 @@ public class KaijuController : MonoBehaviour
     private float meleeCooldown;
     [SerializeField]
     private float meleeRadius;
+    [SerializeField]
+    private float meleeRotationRandomizationRange;
     #endregion
 
     #region Projectile attack parameters
@@ -48,6 +47,7 @@ public class KaijuController : MonoBehaviour
     private float fireCooldown;
     #endregion
 
+    private System.Random rng = new System.Random();
     private Vector2 movementDirection = new Vector2();
     private Vector2 aimDirection = new Vector2();
     private Vector2 actionDirection = new Vector2();
@@ -121,8 +121,8 @@ public class KaijuController : MonoBehaviour
         {
             meleeing = true;
             actionDirection = aimDirection;
-            slash.transform.localPosition = aimDirection * meleeRadius;
-            slash.transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(aimDirection.x, aimDirection.y) * Mathf.Rad2Deg, Vector3.forward);
+            slash.transform.position = aimDirection * meleeRadius + new Vector2(transform.position.x, transform.position.y);
+            slash.transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(aimDirection.x, aimDirection.y) * Mathf.Rad2Deg + (float) rng.NextDouble() * meleeRotationRandomizationRange, Vector3.forward);
             slash.SetActive(true);
             Invoke("ResetMeleeCooldown", meleeCooldown);
         }
