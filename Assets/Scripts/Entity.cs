@@ -6,7 +6,6 @@ public class Entity : MonoBehaviour
 {
     [SerializeField]
     public int maxHealth;
-    private int currentHealth;
     [SerializeField]
     public int damage;
     [SerializeField]
@@ -14,9 +13,12 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private Animator damageAnimator;
     [SerializeField]
-    private ParticleSystem deathParticles;
+    private GameObject deathParticleEmitter;
     [SerializeField]
     private int deathParticlesNumber;
+
+    private int currentHealth;
+    private bool hit;
 
 
     // Start is called before the first frame update
@@ -28,27 +30,30 @@ public class Entity : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        hit = false;
     }
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("This object: " + gameObject.name + " Other object: " + collision.gameObject.name + " Method: OnTriggerEnter2D");
-        if (gameObject.tag != collision.gameObject.tag)
+        Entity otherEntity = collision.gameObject.GetComponent<Entity>();
+        if (!gameObject.CompareTag(collision.gameObject.tag) && !hit)
         {
+            hit = true;
+            otherEntity.hit = true;
             TakeDamage(collision.gameObject.GetComponent<Entity>());
         }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log("This object: " + gameObject.name + " Other object: " + collision.gameObject.name + " Method: OnCollisionEnter2D");
         OnTriggerEnter2D(collision.otherCollider);
     }
 
-    private void TakeDamage(Entity entity)
+    protected void TakeDamage(Entity entity)
     {
-        if (!entity.invulnerable){
+        Debug.Log(gameObject.name + " is taking damage from " + entity.gameObject.name + " and is" + (invulnerable ? "" : " not") + " invulnerable");
+        if (!invulnerable)
+        {
             currentHealth -= entity.damage;
             if (entity.damage > 0)
             {
@@ -56,9 +61,14 @@ public class Entity : MonoBehaviour
             }
             if (currentHealth <= 0)
             {
-                deathParticles.Emit(deathParticlesNumber);
-                Destroy(gameObject);
+                Die();
             }
         }
+    }
+
+    protected void Die() 
+    {
+        // Instantiate(deathParticleEmitter);
+        Destroy(gameObject);
     }
 }

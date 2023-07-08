@@ -142,7 +142,7 @@ PrefabInstance:
     - target: {fileID: -2866594184152025102, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: damageAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 2057494285}
     - target: {fileID: 2225066409732270279, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -202,6 +202,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       insertIndex: 3
       addedObject: {fileID: 2057494284}
+    - targetCorrespondingSourceObject: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2057494285}
   m_SourcePrefab: {fileID: 100100000, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
 --- !u!1 &424329037
 GameObject:
@@ -577,7 +580,7 @@ MonoBehaviour:
   damage: 0
   invulnerable: 0
   damageAnimator: {fileID: 1459902608}
-  deathParticles: {fileID: 0}
+  deathParticleEmitter: {fileID: 0}
   deathParticlesNumber: 5
 --- !u!95 &1459902608
 Animator:
@@ -892,7 +895,7 @@ MonoBehaviour:
   damage: 3
   invulnerable: 1
   damageAnimator: {fileID: 0}
-  deathParticles: {fileID: 0}
+  deathParticleEmitter: {fileID: 0}
   deathParticlesNumber: 0
 --- !u!1 &2057494278 stripped
 GameObject:
@@ -934,3 +937,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!95 &2057494285
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2057494278}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 203ca3d9999e42e42a69e9d64749f33d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
