@@ -16,12 +16,12 @@ public class Aim : MonoBehaviour
     protected float time;
 
     // Start is called before the first frame update
-    void Start()
+    protected void Start()
     {
         projectileFirer = GetComponent<ProjectileFirer>();
     }
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
         time += Time.deltaTime;
         if (time >= frequency)
@@ -32,7 +32,7 @@ public class Aim : MonoBehaviour
         }
     }
 
-    protected void Fire()
+    protected virtual void Fire()
     {
         foreach (Transform transform in directions)
         {

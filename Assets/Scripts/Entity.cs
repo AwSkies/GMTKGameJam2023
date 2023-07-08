@@ -33,6 +33,7 @@ public class Entity : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
+        // Debug.Log(gameObject.name + " is colliding with " + collision.gameObject.name);
         Entity otherEntity = collision.gameObject.GetComponent<Entity>();
         if (!gameObject.CompareTag(collision.gameObject.tag))
         {

@@ -9,10 +9,11 @@ public class AimAtPlayer : Aim
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         entity = GetComponent<Entity>();
     }
 
-    new void Fire()
+    protected override void Fire()
     {
         projectileFirer.FireAt(projectile, entity.player.transform.position);
     }

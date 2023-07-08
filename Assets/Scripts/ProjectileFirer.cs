@@ -8,6 +8,7 @@ public class ProjectileFirer : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
         projectile.GetComponent<Projectile>().direction = direction.normalized;
+        Debug.Log("Object instatiated");
         return projectile;
     }
 
