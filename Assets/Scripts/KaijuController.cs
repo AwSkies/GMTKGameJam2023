@@ -10,18 +10,18 @@ public class KaijuController : MonoBehaviour
     private Rigidbody2D rigidBody;
     [SerializeField]
     private ProjectileFirer projectileFirer;
-    #endregion
-
-    [SerializeField]
-    private PlayerInput playerInput;
-
-    [SerializeField]
-    private GameObject slash;
-    [SerializeField]
-    private Animator slashAnimator;
-
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private Animator slashAnimator;
+    [SerializeField]
+    private PlayerInput playerInput;
+    [SerializeField]
+    private GameObject slash;
+    #endregion
+
+
+
 
     #region Dash parameters
     [SerializeField]
@@ -37,6 +37,8 @@ public class KaijuController : MonoBehaviour
     #region Melee parameters
     [SerializeField]
     private float meleeCooldown;
+    [SerializeField]
+    private float meleeRadius;
     #endregion
 
     #region Projectile attack parameters
@@ -119,7 +121,7 @@ public class KaijuController : MonoBehaviour
         {
             meleeing = true;
             actionDirection = aimDirection;
-            slash.transform.localPosition = aimDirection;
+            slash.transform.localPosition = aimDirection * meleeRadius;
             slash.transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(aimDirection.x, aimDirection.y) * Mathf.Rad2Deg, Vector3.forward);
             slash.SetActive(true);
             Invoke("ResetMeleeCooldown", meleeCooldown);

@@ -449,15 +449,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rigidBody: {fileID: 1459902603}
   projectileFirer: {fileID: 1459902604}
+  animator: {fileID: 1459902608}
+  slashAnimator: {fileID: 1850618233}
   playerInput: {fileID: 1459902605}
   slash: {fileID: 1850618229}
-  slashAnimator: {fileID: 1850618233}
-  animator: {fileID: 1459902608}
   speed: 5
   dashSpeed: 15
   dashTime: 0.3
   dashCooldown: 0.5
   meleeCooldown: 0.4
+  meleeRadius: 2
   projectilePrefab: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
   fireCooldown: 0.4
 --- !u!50 &1459902603
