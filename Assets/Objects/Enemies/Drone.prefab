@@ -112,6 +112,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4836911238925301669, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
   m_PrefabInstance: {fileID: 8922989844222816901}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &5267649505330762682 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+  m_PrefabInstance: {fileID: 8922989844222816901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291359621163509348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 842300f9d15d6fd40a24758f93b48d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8291359621163509348 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 631630233801741537, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
@@ -131,6 +142,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 8692232031404783146}
   rigidBody: {fileID: 814883929708882545}
+  entity: {fileID: 5267649505330762682}
   fireSource: {fileID: 4104180973332923680}
   movementSpeed: 1
   moving: 1

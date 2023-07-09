@@ -28,7 +28,6 @@ public class Aim : MonoBehaviour
         {
             time -= frequency;
             Fire();
-            
         }
     }
 

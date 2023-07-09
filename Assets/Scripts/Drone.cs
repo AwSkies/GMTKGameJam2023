@@ -8,6 +8,7 @@ public class Drone : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private Rigidbody2D rigidBody;
+    [SerializeField]
     private Entity entity;
     [SerializeField]
     private Transform fireSource;
@@ -22,7 +23,7 @@ public class Drone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        entity = GetComponent<Entity>();
+
     }
 
     // Update is called once per frame

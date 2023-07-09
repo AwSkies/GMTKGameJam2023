@@ -223,7 +223,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71161e620a6b2f64f8441942097e1d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  fireSource: {fileID: 4836911238925301669}
+  fireSources:
+  - {fileID: 4836911238925301669}
 --- !u!1 &1138516918051623562
 GameObject:
   m_ObjectHideFlags: 0
