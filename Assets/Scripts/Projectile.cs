@@ -16,7 +16,7 @@ public class Projectile : MonoBehaviour
     private float maxTime;
 
     public Vector2 direction;
-    private float time;
+    protected float time;
 
     // Start is called before the first frame update
     void Start()
@@ -34,7 +34,7 @@ public class Projectile : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    protected void FixedUpdate()
     {
         time += Time.deltaTime;
         rigidBody.velocity = direction * speed + Physics2D.gravity * time * rigidBody.gravityScale;

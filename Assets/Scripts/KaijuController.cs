@@ -231,4 +231,9 @@ public class KaijuController : MonoBehaviour
     {
         mouthParticles.Emit(30);
     }
+
+    public Vector2 GetDirectionToFrom(Vector2 position)
+    {
+        return ((Vector2) transform.position - position).normalized;
+    }
 }

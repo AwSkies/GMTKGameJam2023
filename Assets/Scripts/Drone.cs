@@ -8,7 +8,6 @@ public class Drone : MonoBehaviour
     private Animator animator;
     [SerializeField]
     private Rigidbody2D rigidBody;
-    [SerializeField]
     private Entity entity;
     [SerializeField]
     private Transform fireSource;
@@ -23,7 +22,7 @@ public class Drone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        entity = gameObject.GetComponent<Entity>();
     }
 
     // Update is called once per frame
@@ -36,7 +35,7 @@ public class Drone : MonoBehaviour
     {
         if (moving)
         {
-            movementDirection = (entity.player.transform.position - transform.position).normalized;
+            movementDirection = entity.player.GetComponent<KaijuController>().GetDirectionToFrom(transform.position);
             rigidBody.velocity = movementDirection * movementSpeed;
         }
         animator.SetBool("Moving", moving);

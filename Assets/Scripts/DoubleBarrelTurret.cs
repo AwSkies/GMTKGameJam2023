@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class CannonTurret : Aim
 {
-    [SerializeField]
     private Entity entity;
     [SerializeField]
     private Animator animator;
@@ -16,6 +15,13 @@ public class CannonTurret : Aim
     private Vector2 direction;
     private float lastAngle = 180;
 
+    // Start is called before the first frame update
+    new void Start()
+    {
+        base.Start();
+        entity = gameObject.GetComponent<Entity>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -24,7 +30,7 @@ public class CannonTurret : Aim
 
     new void FixedUpdate()
     {
-        direction = SnapToCardinalPoint((entity.player.transform.position - transform.position).normalized);
+        direction = SnapToCardinalPoint(entity.player.GetComponent<KaijuController>().GetDirectionToFrom(transform.position));
         animator.SetFloat("Horizontal", direction.x);
         animator.SetFloat("Vertical", direction.y);
         float angle = -Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
