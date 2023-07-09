@@ -33,7 +33,6 @@ public class Aim : MonoBehaviour
         }
         if (time / frequency >= telegraphFraction)
         {
-            Debug.Log(time / frequency);
             foreach (Transform fireSource in projectileFirer.fireSources)
             {
                 ParticleSystem particleSystem = fireSource.gameObject.GetComponent<ParticleSystem>();
