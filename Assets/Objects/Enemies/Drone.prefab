@@ -107,6 +107,17 @@ Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8114324763023333620, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
   m_PrefabInstance: {fileID: 8922989844222816901}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &3377229313826343597 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+  m_PrefabInstance: {fileID: 8922989844222816901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8291359621163509348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71161e620a6b2f64f8441942097e1d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4104180973332923680 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4836911238925301669, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
@@ -149,6 +160,7 @@ MonoBehaviour:
   directions: []
   projectile: {fileID: 1313304831289350149, guid: a7efb15d4792c9e47a4034f682a8e9fe, type: 3}
   frequency: 5
+  projectileFirer: {fileID: 3377229313826343597}
 --- !u!95 &8692232031404783146 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 249335178465821871, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}

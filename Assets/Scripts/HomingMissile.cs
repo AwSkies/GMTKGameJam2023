@@ -23,7 +23,6 @@ public class HomingMissile : Projectile
     new void FixedUpdate()
     {
         direction = entity.player.GetComponent<KaijuController>().GetDirectionToFrom(transform.position);
-        transform.rotation = Quaternion.AngleAxis(-Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + 90, Vector3.forward);
         base.FixedUpdate();
     }
 

@@ -20,6 +20,13 @@ public class ProjectileFirer : MonoBehaviour
         return projectiles;
     }
 
+    public GameObject FireOneInDirection(GameObject projectilePrefab, Vector2 direction, int fireSourceIndex = 0)
+    {
+        GameObject projectile = Instantiate(projectilePrefab, fireSources[fireSourceIndex].transform.position, Quaternion.identity);
+        projectile.GetComponent<Projectile>().direction = direction.normalized;
+        return projectile;
+    }
+
     /// Only use if the ProjectileFirer has one fireSource
     public GameObject FireAt(GameObject projectilePrefab, Vector2 direction, int fireSourceIndex = 0)
     {

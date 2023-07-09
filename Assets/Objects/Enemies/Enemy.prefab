@@ -211,6 +211,7 @@ MonoBehaviour:
   - {fileID: 5186734552197840911}
   projectile: {fileID: 8740808939449537709, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
   frequency: 5
+  projectileFirer: {fileID: 6127859597676279848}
 --- !u!114 &6127859597676279848
 MonoBehaviour:
   m_ObjectHideFlags: 0

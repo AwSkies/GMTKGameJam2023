@@ -187,6 +187,17 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 3145298385951696911}
   m_SourcePrefab: {fileID: 100100000, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+--- !u!114 &906310031973919551 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+  m_PrefabInstance: {fileID: 6456292671200416535}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5862943048295352310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71161e620a6b2f64f8441942097e1d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4709402704338637194 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1784115072260735645, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
@@ -257,7 +268,7 @@ MonoBehaviour:
   directions: []
   projectile: {fileID: 1241472020645133949, guid: 93e1f6afa2baf104da274d7feeea7db0, type: 3}
   frequency: 5
-  entity: {fileID: 7734927232372240936}
+  projectileFirer: {fileID: 906310031973919551}
   animator: {fileID: 6551764374307805112}
   pivot: {fileID: 3969068964286735465}
   cardinalPoints: 8
@@ -266,14 +277,3 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 249335178465821871, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
   m_PrefabInstance: {fileID: 6456292671200416535}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7734927232372240936 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
-  m_PrefabInstance: {fileID: 6456292671200416535}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5862943048295352310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 842300f9d15d6fd40a24758f93b48d6d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

@@ -10,7 +10,7 @@ public class Aim : MonoBehaviour
     protected GameObject projectile;
     [SerializeField]
     protected float frequency;
-
+    [SerializeField]
     protected ProjectileFirer projectileFirer;
 
     protected float time;
@@ -18,7 +18,7 @@ public class Aim : MonoBehaviour
     // Start is called before the first frame update
     protected void Start()
     {
-        projectileFirer = GetComponent<ProjectileFirer>();
+
     }
 
     protected void FixedUpdate()
@@ -35,7 +35,8 @@ public class Aim : MonoBehaviour
     {
         foreach (Transform fireDirection in directions)
         {
-            projectileFirer.FireInDirection(projectile, fireDirection.position);
+            Debug.Log(fireDirection.ToString());
+            projectileFirer.FireInDirection(projectile, fireDirection.localPosition);
         }
     }
 }
