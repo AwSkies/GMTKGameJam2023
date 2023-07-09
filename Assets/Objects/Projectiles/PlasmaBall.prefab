@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: damage
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: -2866594184152025102, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
+      propertyPath: deathParticleEmitter
+      value: 
+      objectReference: {fileID: 8056630777231743090, guid: 82984bc9f18d21148a5becb1dc5110e9, type: 3}
     - target: {fileID: 2225066409732270279, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_RootOrder
       value: 0

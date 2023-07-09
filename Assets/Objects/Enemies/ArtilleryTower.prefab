@@ -192,6 +192,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 517193155, guid: e89d3fb13f829eb4cacda9fdae8b7828, type: 3}
+    - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: deathParticleEmitter
+      value: 
+      objectReference: {fileID: 3838860079762598889, guid: c4a9c4635a9afcb48a7d99cf5613cd9a, type: 3}
     - target: {fileID: 4712103320114751752, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: projectile
       value: 
