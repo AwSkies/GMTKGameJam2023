@@ -193,6 +193,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 517193155, guid: e89d3fb13f829eb4cacda9fdae8b7828, type: 3}
     - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a9924a279f52dd04db7e424984ce75d6, type: 3}
+    - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: deathParticleEmitter
       value: 
       objectReference: {fileID: 3838860079762598889, guid: c4a9c4635a9afcb48a7d99cf5613cd9a, type: 3}
@@ -236,6 +240,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.8660254
       objectReference: {fileID: 0}
+    - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: eebd9b0b46731e44bac8ad2139a229f5, type: 3}
     - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
       value: 0.33333334

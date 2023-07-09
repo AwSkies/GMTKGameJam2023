@@ -4924,6 +4924,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: 2919c8ffc4e7ab9448e24d920fa7503d, type: 3}
     - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: ab7cc3c94232dbb41bd9e8957170bd84, type: 3}
+    - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: maxHealth
       value: 20
       objectReference: {fileID: 0}
@@ -4955,6 +4959,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.298
       objectReference: {fileID: 0}
+    - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 80dde06195e95d84a9aa507b76b5e2be, type: 3}
     - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: fireSources.Array.size
       value: 2
