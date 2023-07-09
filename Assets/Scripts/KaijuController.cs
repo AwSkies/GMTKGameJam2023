@@ -87,7 +87,7 @@ public class KaijuController : MonoBehaviour
     {
         currentSpeed = speed;
         colliderOffsetX = capsuleCollider.offset.x;
-        fireSourceX = fireSource.position.x;
+        fireSourceX = fireSource.localPosition.x;
         fireSource.rotation = Quaternion.Euler(0, 0, fireSourceRotationLeft);
     }
 
