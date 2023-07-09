@@ -64,6 +64,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: acabf458d2247c34c94676e411292c6d, type: 3}
+    - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: deathParticleEmitter
+      value: 
+      objectReference: {fileID: 3838860079762598889, guid: c4a9c4635a9afcb48a7d99cf5613cd9a, type: 3}
     - target: {fileID: 4712103320114751752, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: frequency
       value: 0.25
