@@ -48603,6 +48603,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: c2e086c6a9755b84fa990b8e1284a8e9, type: 3}
     - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a86e6d243f618034684382f848908d30, type: 3}
+    - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: deathParticleEmitter
       value: 
       objectReference: {fileID: 3838860079762598889, guid: c4a9c4635a9afcb48a7d99cf5613cd9a, type: 3}
@@ -48626,6 +48630,10 @@ PrefabInstance:
       propertyPath: directions.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: fireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: a881a58ea63e32043993f7262e3ae5d6, type: 3}
     - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: fireSources.Array.size
       value: 4
@@ -48775,6 +48783,8 @@ MonoBehaviour:
   fireSources:
   - {fileID: 8357971572066033695}
   - {fileID: 7276459828406265585}
+  audioSource: {fileID: 0}
+  fireSound: {fileID: 0}
 --- !u!114 &7163523746723550657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48808,6 +48818,8 @@ MonoBehaviour:
   fireSources:
   - {fileID: 4133670483269313534}
   - {fileID: 6759234118302060746}
+  audioSource: {fileID: 0}
+  fireSound: {fileID: 0}
 --- !u!114 &3252986948919278549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48841,6 +48853,8 @@ MonoBehaviour:
   fireSources:
   - {fileID: 8925489343041599941}
   - {fileID: 4579202715541080062}
+  audioSource: {fileID: 0}
+  fireSound: {fileID: 0}
 --- !u!4 &1301294188257592110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1784115072260735645, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}

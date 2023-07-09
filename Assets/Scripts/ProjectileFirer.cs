@@ -7,6 +7,11 @@ public class ProjectileFirer : MonoBehaviour
     [SerializeField]
     public Transform[] fireSources;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip fireSound;
+
     public GameObject[] FireInDirection(GameObject projectilePrefab, Vector2 direction)
     {
         GameObject[] projectiles = new GameObject[fireSources.Length];
@@ -16,7 +21,7 @@ public class ProjectileFirer : MonoBehaviour
             projectile.GetComponent<Projectile>().direction = direction.normalized;
             projectiles[i] = projectile;
         }
-        
+        audioSource.PlayOneShot(fireSound);
         return projectiles;
     }
 

@@ -18,6 +18,11 @@ public class Entity : MonoBehaviour
     private GameObject deathParticleEmitter;
     public GameObject player;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip hurtSound;
+
     private int currentHealth;
 
     // Start is called before the first frame update
@@ -53,6 +58,7 @@ public class Entity : MonoBehaviour
                 try
                 {
                     damageAnimator.Play("Damage");
+                    audioSource.PlayOneShot(hurtSound);
                 }
                 catch (UnassignedReferenceException)
                 {
