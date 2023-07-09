@@ -41,6 +41,6 @@ public class Projectile : MonoBehaviour
     {
         time += Time.deltaTime;
         rigidBody.velocity = direction * speed + Physics2D.gravity * time * rigidBody.gravityScale;
-        transform.rotation = Quaternion.AngleAxis(-Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + 90, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(-Mathf.Atan2(rigidBody.velocity.x, rigidBody.velocity.y) * Mathf.Rad2Deg + 90, Vector3.forward);
     }
 }

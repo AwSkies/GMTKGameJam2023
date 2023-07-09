@@ -64,7 +64,7 @@ public class Entity : MonoBehaviour
         }
     }
 
-    protected void Die() 
+    protected virtual void Die() 
     {
         Instantiate(deathParticleEmitter, transform.position, Quaternion.identity);
         Destroy(gameObject);

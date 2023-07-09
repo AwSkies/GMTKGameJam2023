@@ -5,8 +5,6 @@ using UnityEngine;
 public class HomingMissile : Projectile
 {
     private Entity entity;
-    [SerializeField]
-    private GameObject explosion;
 
     // Start is called before the first frame update
     void Start()
@@ -23,10 +21,5 @@ public class HomingMissile : Projectile
     void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-    }
-
-    void OnDestroy()
-    {
-        Instantiate(explosion, transform.position, Quaternion.identity);
     }
 }
