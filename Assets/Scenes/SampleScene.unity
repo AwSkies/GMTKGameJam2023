@@ -5783,7 +5783,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 5
   damage: 1
-  invulnerable: 0
+  invulnerable: 1
   damageAnimator: {fileID: 1459902608}
   deathParticleEmitter: {fileID: 4659250545514355410, guid: b8319395b07070f46905752c640b20bd, type: 3}
   player: {fileID: 0}

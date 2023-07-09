@@ -88,6 +88,34 @@ PrefabInstance:
       propertyPath: directions.Array.data[1]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 2.27
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4712103320114751752, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
     m_RemovedGameObjects:
@@ -161,6 +189,7 @@ MonoBehaviour:
   projectile: {fileID: 1313304831289350149, guid: a7efb15d4792c9e47a4034f682a8e9fe, type: 3}
   frequency: 5
   projectileFirer: {fileID: 3377229313826343597}
+  telegraphFraction: 0.8
 --- !u!95 &8692232031404783146 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 249335178465821871, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}

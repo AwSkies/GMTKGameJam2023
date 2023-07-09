@@ -84,6 +84,46 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -0.079
       objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 0.52
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1.34
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.b
+      value: 0.11936569
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.maxColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.minColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.minColor.g
+      value: 0.5821822
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.minColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6667350517383443969, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+      propertyPath: InitialModule.startColor.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 8114324763023333620, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: m_Constraints
       value: 7

@@ -12,6 +12,8 @@ public class Aim : MonoBehaviour
     protected float frequency;
     [SerializeField]
     protected ProjectileFirer projectileFirer;
+    [SerializeField]
+    protected float telegraphFraction;
 
     protected float time;
 
@@ -28,6 +30,29 @@ public class Aim : MonoBehaviour
         {
             time -= frequency;
             Fire();
+        }
+        if (time / frequency >= telegraphFraction)
+        {
+            Debug.Log(time / frequency);
+            foreach (Transform fireSource in projectileFirer.fireSources)
+            {
+                ParticleSystem particleSystem = fireSource.gameObject.GetComponent<ParticleSystem>();
+                if (particleSystem.isStopped)
+                {
+                    particleSystem.Play();
+                }
+            }
+        }
+        else
+        {
+            foreach (Transform fireSource in projectileFirer.fireSources)
+            {
+                ParticleSystem particleSystem = fireSource.gameObject.GetComponent<ParticleSystem>();
+                if (particleSystem.isPlaying)
+                {
+                    particleSystem.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+                }
+            }
         }
     }
 
