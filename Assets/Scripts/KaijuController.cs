@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class KaijuController : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class KaijuController : MonoBehaviour
     private Transform fireSource;
     [SerializeField]
     private ParticleSystem mouthParticles;
+    [SerializeField]
+    private ParticleSystem winParticles;
     #endregion
 
     #region Dash parameters
@@ -56,14 +59,11 @@ public class KaijuController : MonoBehaviour
     #endregion
 
     [SerializeField]
-    private Animation idleLeft;
-    [SerializeField]
-    private Animation idleRight;
-
-    [SerializeField]
     private float levelTop;
     [SerializeField]
     private float levelBottom;
+    [SerializeField]
+    private float winY;
 
     private System.Random rng = new System.Random();
     private Vector2 movementDirection = new Vector2();
@@ -87,7 +87,7 @@ public class KaijuController : MonoBehaviour
     {
         currentSpeed = speed;
         colliderOffsetX = capsuleCollider.offset.x;
-        fireSourceX = fireSource.position.x;
+        fireSourceX = fireSource.localPosition.x;
         fireSource.rotation = Quaternion.Euler(0, 0, fireSourceRotationLeft);
     }
 
@@ -135,6 +135,11 @@ public class KaijuController : MonoBehaviour
         else
         {
             fireSource.rotation = Quaternion.Euler(0, 0, fireSourceRotationRight);
+        }
+        if (transform.position.y >= winY && !winParticles.isPlaying)
+        {
+            winParticles.Play();
+            Invoke("LoadNextLevel", winParticles.main.duration);
         }
     }
 
@@ -240,5 +245,10 @@ public class KaijuController : MonoBehaviour
     public Vector2 GetDirectionToFrom(Vector2 position)
     {
         return ((Vector2) transform.position - position).normalized;
+    }
+
+    private void LoadNextLevel()
+    {
+        SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
     }
 }
