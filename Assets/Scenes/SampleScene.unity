@@ -3194,6 +3194,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5983708764961100112, guid: a3f176159d0c9b64ca74c796c0ee661d, type: 3}
+      propertyPath: winY
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983708764961100112, guid: a3f176159d0c9b64ca74c796c0ee661d, type: 3}
       propertyPath: slash
       value: 
       objectReference: {fileID: 1850618229}
