@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2866594184152025102, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
+      propertyPath: deathParticleEmitter
+      value: 
+      objectReference: {fileID: 343288005369595384, guid: c94ecf40756d64f47b86df3cccf69274, type: 3}
     - target: {fileID: 2225066409732270279, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -145,7 +149,7 @@ MonoBehaviour:
   maxDistance: 100
   maxTime: 15
   direction: {x: 0, y: 0}
-  explosion: {fileID: 0}
+  explosion: {fileID: 911111083082241881, guid: 2cdfb324d2662514a8b23cb0cee9494d, type: 3}
 --- !u!198 &8103651199796858103
 ParticleSystem:
   m_ObjectHideFlags: 0

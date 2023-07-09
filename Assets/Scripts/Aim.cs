@@ -35,7 +35,6 @@ public class Aim : MonoBehaviour
     {
         foreach (Transform fireDirection in directions)
         {
-            Debug.Log(fireDirection.ToString());
             projectileFirer.FireInDirection(projectile, fireDirection.localPosition);
         }
     }

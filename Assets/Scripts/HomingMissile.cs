@@ -33,6 +33,6 @@ public class HomingMissile : Projectile
 
     void OnDestroy()
     {
-        Instantiate(explosion);
+        Instantiate(explosion, transform.position, Quaternion.identity);
     }
 }
