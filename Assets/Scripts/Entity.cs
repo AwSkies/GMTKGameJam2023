@@ -17,6 +17,7 @@ public class Entity : MonoBehaviour
     [SerializeField]
     private GameObject deathParticleEmitter;
     public GameObject player;
+    private LevelInfo levelInfo;
 
     [SerializeField]
     private AudioSource audioSource;
@@ -36,6 +37,15 @@ public class Entity : MonoBehaviour
     void Update()
     {
 
+    }
+
+    void FixedUpdate()
+    {
+        if (levelInfo == null)
+        {
+            levelInfo = FindObjectOfType<LevelInfo>();
+        }
+        transform.position = new Vector3(transform.position.x, transform.position.y, (transform.position.y - levelInfo.levelBottom) / (levelInfo.levelTop - levelInfo.levelBottom));
     }
 
     void OnTriggerStay2D(Collider2D collision)
