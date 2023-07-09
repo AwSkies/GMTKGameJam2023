@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 364002137081494033}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.238, y: -0.293, z: 0}
+  m_LocalPosition: {x: 0.43, y: 0.61, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -55,7 +55,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2166869418999068393}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.865, z: 0}
+  m_LocalPosition: {x: 0, y: 0.99, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -73,10 +73,10 @@ PrefabInstance:
     - target: {fileID: 249335178465821871, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: 9a7528dca4d0eb3429a4015316f9996f, type: 2}
+      objectReference: {fileID: 9100000, guid: 203b22b32be195c458cb4e4cbb906429, type: 2}
     - target: {fileID: 631630233801741537, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: m_Name
-      value: CannonTurret
+      value: PlasmaTurret
       objectReference: {fileID: 0}
     - target: {fileID: 1784115072260735645, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: m_RootOrder
@@ -125,7 +125,7 @@ PrefabInstance:
     - target: {fileID: 2605101959199592531, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 2919c8ffc4e7ab9448e24d920fa7503d, type: 3}
+      objectReference: {fileID: 21300000, guid: 3e870e380dffc0d43b0a57962b725c70, type: 3}
     - target: {fileID: 3661040209334706495, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: maxHealth
       value: 20
@@ -148,11 +148,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4836911238925301669, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.233
+      value: -0.42
       objectReference: {fileID: 0}
     - target: {fileID: 4836911238925301669, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.298
+      value: 0.58
       objectReference: {fileID: 0}
     - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: fireSources.Array.size
@@ -229,7 +229,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.580865}
+  m_Offset: {x: 0, y: -0.5237466}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -240,7 +240,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.99, y: 1.4482701}
+  m_Size: {x: 1.99, y: 1.5625069}
   m_EdgeRadius: 0
 --- !u!114 &3145298385951696911
 MonoBehaviour:
@@ -255,12 +255,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   directions: []
-  projectile: {fileID: 1241472020645133949, guid: 93e1f6afa2baf104da274d7feeea7db0, type: 3}
+  projectile: {fileID: 4887783764649599798, guid: c7e8bd81e3dcb5944a216ae67ea76bed, type: 3}
   frequency: 5
   entity: {fileID: 7734927232372240936}
   animator: {fileID: 6551764374307805112}
   pivot: {fileID: 3969068964286735465}
-  cardinalPoints: 8
+  cardinalPoints: 16
 --- !u!95 &6551764374307805112 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 249335178465821871, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}

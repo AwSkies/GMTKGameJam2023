@@ -11,7 +11,7 @@ public class CannonTurret : Aim
     [SerializeField]
     private Transform pivot;
     [SerializeField]
-    private Vector2[] cardinalPoints;
+    private int cardinalPoints;
 
     private Vector2 direction;
     private float lastAngle = 180;
@@ -45,8 +45,10 @@ public class CannonTurret : Aim
     private Vector2 SnapToCardinalPoint(Vector2 vector)
     {
         Vector2 closest = Vector2.zero;
-        foreach (Vector2 point in cardinalPoints)
+        for (int i = 0; i < cardinalPoints; i++)
         {
+            float angle = 2 * Mathf.PI * i / cardinalPoints;
+            Vector2 point = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle));
             if (Vector2.Distance(vector, point) < Vector2.Distance(closest, vector))
             {
                 closest = point;
