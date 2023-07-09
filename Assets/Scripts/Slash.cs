@@ -20,6 +20,7 @@ public class Slash : MonoBehaviour
     public void EnableSlash()
     {
         gameObject.SetActive(true);
+        Debug.Log("enabled slash");
     }
 
     public void DisableSlash()

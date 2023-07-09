@@ -196,6 +196,7 @@ MonoBehaviour:
   maxHealth: 10
   damage: 0
   invulnerable: 0
+  invulnerabilityTime: 0.5
   damageAnimator: {fileID: 8492879671015081040}
   deathParticleEmitter: {fileID: 6014190374950832237, guid: 8f623cc5444aebf47bedbb36592b0275, type: 3}
   player: {fileID: 0}

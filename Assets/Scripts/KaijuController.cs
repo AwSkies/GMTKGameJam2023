@@ -179,7 +179,7 @@ public class KaijuController : MonoBehaviour
         {
             meleeing = true;
             actionDirection = aimDirectionMelee;
-            slash.transform.position = aimDirectionMelee * meleeRadius + new Vector2(transform.position.x, transform.position.y);
+            slash.transform.localPosition = aimDirectionMelee * meleeRadius;
             slash.transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(aimDirectionMelee.x, aimDirectionMelee.y) * Mathf.Rad2Deg + (float) rng.NextDouble() * meleeRotationRandomizationRange, Vector3.forward);
             slash.SetActive(true);
             Invoke("ResetMeleeCooldown", meleeCooldown);

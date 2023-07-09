@@ -11,6 +11,8 @@ public class Entity : MonoBehaviour
     [SerializeField]
     public bool invulnerable;
     [SerializeField]
+    private float invulnerabilityTime;
+    [SerializeField]
     private Animator damageAnimator;
     [SerializeField]
     private GameObject deathParticleEmitter;
@@ -31,14 +33,14 @@ public class Entity : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerStay2D(Collider2D collision)
     {
         TakeDamage(collision.gameObject.GetComponent<Entity>());
     }
 
-    void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionStay2D(Collision2D collision)
     {
-        OnTriggerEnter2D(collision.collider);
+        OnTriggerStay2D(collision.collider);
     }
 
     protected void TakeDamage(Entity entity)
@@ -56,6 +58,8 @@ public class Entity : MonoBehaviour
                 {
 
                 }
+                invulnerable = true;
+                Invoke("MakeVulnerable", invulnerabilityTime);
             }
             if (currentHealth <= 0)
             {
@@ -68,5 +72,10 @@ public class Entity : MonoBehaviour
     {
         Instantiate(deathParticleEmitter, transform.position, Quaternion.identity);
         Destroy(gameObject);
+    }
+
+    private void MakeVulnerable()
+    {
+        invulnerable = false;
     }
 }
