@@ -60,6 +60,10 @@ public class KaijuController : MonoBehaviour
     [SerializeField]
     private Animation idleRight;
 
+    [SerializeField]
+    private float levelTop;
+    [SerializeField]
+    private float levelBottom;
 
     private System.Random rng = new System.Random();
     private Vector2 movementDirection = new Vector2();
@@ -95,6 +99,7 @@ public class KaijuController : MonoBehaviour
 
     void FixedUpdate()
     {
+        transform.position = new Vector3(transform.position.x, transform.position.y, (transform.position.y - levelBottom) / (levelTop - levelBottom));
         // Move character
         rigidBody.velocity = movementDirection * currentSpeed;
         // Set animation variables
