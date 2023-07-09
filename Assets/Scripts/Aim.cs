@@ -33,9 +33,9 @@ public class Aim : MonoBehaviour
 
     protected virtual void Fire()
     {
-        foreach (Transform transform in directions)
+        foreach (Transform fireDirection in directions)
         {
-            projectileFirer.FireInDirection(projectile, transform.position);
+            projectileFirer.FireInDirection(projectile, fireDirection.position);
         }
     }
 }
