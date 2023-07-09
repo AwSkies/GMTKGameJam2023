@@ -173,6 +173,7 @@ MonoBehaviour:
   fireSource: {fileID: 4104180973332923680}
   movementSpeed: 1
   moving: 1
+  fireSourceRadius: 0.25
 --- !u!114 &5916315367054141938
 MonoBehaviour:
   m_ObjectHideFlags: 0

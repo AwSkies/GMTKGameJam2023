@@ -17,6 +17,9 @@ public class Drone : MonoBehaviour
     [SerializeField]
     private bool moving;
 
+    [SerializeField]
+    private float fireSourceRadius;
+
     private Vector2 movementDirection = new Vector2();
 
     // Start is called before the first frame update
@@ -41,6 +44,6 @@ public class Drone : MonoBehaviour
         animator.SetBool("Moving", moving);
         animator.SetFloat("Vertical", movementDirection.y);
         animator.SetFloat("Horizontal", movementDirection.x);    
-        fireSource.localPosition = movementDirection;
+        fireSource.localPosition = movementDirection * fireSourceRadius;
     }
 }
