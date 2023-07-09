@@ -16,8 +16,8 @@ TagManager:
   - Enemy
   - Building
   - Boundaries
-  - 
-  - 
+  - PlayerProjectile
+  - EnemyProjectile
   - 
   - 
   - 
