@@ -5068,8 +5068,6 @@ MonoBehaviour:
   projectilePrefab: {fileID: 197888429837451982, guid: dddeada876c044d41a6f656df59af249, type: 3}
   fireDelay: 0.05
   fireCooldown: 0.4
-  levelTop: 0
-  levelBottom: 0
   winY: 0
   fireSourceRotationLeft: 102.11
   fireSourceRotationRight: 215
@@ -5085,7 +5083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2723e907515deac4991b2dd7b8f60f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 5
+  maxHealth: 20
   damage: 1
   invulnerable: 0
   invulnerabilityTime: 0.5
