@@ -14,12 +14,6 @@ public class HomingMissile : Projectile
         entity = gameObject.GetComponent<Entity>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     new void FixedUpdate()
     {
         direction = entity.player.GetComponent<KaijuController>().GetDirectionToFrom(transform.position);

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private Camera cam;
+    private Entity entity;
     [SerializeField]
     private Rigidbody2D rigidBody;
 
@@ -21,14 +21,17 @@ public class Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        cam = Camera.main;
         transform.localRotation = Quaternion.AngleAxis(-Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + 90, Vector3.forward);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position, cam.transform.position) > maxDistance || time > maxTime)
+        if (entity == null)
+        {
+            entity = GetComponent<Entity>();
+        }
+        if (Vector3.Distance(transform.position, entity.player.transform.position) > maxDistance || time > maxTime)
         {
             Destroy(gameObject);
         }
@@ -38,6 +41,6 @@ public class Projectile : MonoBehaviour
     {
         time += Time.deltaTime;
         rigidBody.velocity = direction * speed + Physics2D.gravity * time * rigidBody.gravityScale;
-            transform.rotation = Quaternion.AngleAxis(-Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + 90, Vector3.forward);
+        transform.rotation = Quaternion.AngleAxis(-Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg + 90, Vector3.forward);
     }
 }
