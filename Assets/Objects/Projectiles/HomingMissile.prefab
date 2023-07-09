@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: -2866594184152025102, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: eebd9b0b46731e44bac8ad2139a229f5, type: 3}
+    - target: {fileID: -2866594184152025102, guid: 16605e2cc93cab148b1e3c45e56b5a76, type: 3}
       propertyPath: deathParticleEmitter
       value: 
       objectReference: {fileID: 343288005369595384, guid: c94ecf40756d64f47b86df3cccf69274, type: 3}
