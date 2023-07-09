@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4709402704338637194, guid: 10c7afab8d615d1409399d0497ee0bcc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.53
+      value: -1.84
       objectReference: {fileID: 0}
     - target: {fileID: 4709402704338637194, guid: 10c7afab8d615d1409399d0497ee0bcc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5683,6 +5683,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fireSources:
   - {fileID: 881752981}
+  audioSource: {fileID: 0}
+  fireSound: {fileID: 0}
 --- !u!114 &1459902605
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5788,6 +5790,8 @@ MonoBehaviour:
   damageAnimator: {fileID: 1459902608}
   deathParticleEmitter: {fileID: 4659250545514355410, guid: b8319395b07070f46905752c640b20bd, type: 3}
   player: {fileID: 0}
+  audioSource: {fileID: 0}
+  hurtSound: {fileID: 0}
 --- !u!1 &1597723480
 GameObject:
   m_ObjectHideFlags: 0
@@ -10987,6 +10991,8 @@ MonoBehaviour:
   damageAnimator: {fileID: 0}
   deathParticleEmitter: {fileID: 0}
   player: {fileID: 0}
+  audioSource: {fileID: 0}
+  hurtSound: {fileID: 0}
 --- !u!1001 &1870499364
 PrefabInstance:
   m_ObjectHideFlags: 0
