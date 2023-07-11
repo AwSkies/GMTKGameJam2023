@@ -2,23 +2,20 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CannonTurret : Aim
+public class PlayerTrackingTurret : MonoBehaviour
 {
     private Entity entity;
     [SerializeField]
     private Animator animator;
-    [SerializeField]
-    private Transform pivot;
+
     [SerializeField]
     private int cardinalPoints;
 
     private Vector2 direction;
-    private float lastAngle = 180;
 
     // Start is called before the first frame update
-    new void Start()
+    void Start()
     {
-        base.Start();
         entity = gameObject.GetComponent<Entity>();
     }
 
@@ -28,24 +25,11 @@ public class CannonTurret : Aim
         
     }
 
-    new void FixedUpdate()
+    void FixedUpdate()
     {
         direction = SnapToCardinalPoint(entity.player.GetComponent<KaijuController>().GetDirectionToFrom(transform.position));
         animator.SetFloat("Horizontal", direction.x);
         animator.SetFloat("Vertical", direction.y);
-        float angle = -Mathf.Atan2(direction.x, direction.y) * Mathf.Rad2Deg;
-        foreach (Transform fireSource in projectileFirer.fireSources)
-        {
-            fireSource.RotateAround(pivot.position, Vector3.forward, angle - lastAngle);
-            fireSource.rotation = Quaternion.Euler(0, 0, angle);
-        }
-        lastAngle = angle;
-        base.FixedUpdate();
-    }
-
-    protected override void Fire()
-    {
-        projectileFirer.FireInDirection(projectile, direction);
     }
 
     private Vector2 SnapToCardinalPoint(Vector2 vector)
