@@ -14,8 +14,6 @@ public class KaijuController : MonoBehaviour
     [SerializeField]
     private Animator animator;
     [SerializeField]
-    private Animator slashAnimator;
-    [SerializeField]
     private PlayerInput playerInput;
     [SerializeField]
     private GameObject slash;
