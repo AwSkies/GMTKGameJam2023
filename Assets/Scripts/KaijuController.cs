@@ -18,8 +18,6 @@ public class KaijuController : MonoBehaviour
     [SerializeField]
     private GameObject slash;
     [SerializeField]
-    private CapsuleCollider2D capsuleCollider;
-    [SerializeField]
     private Transform fireSource;
     [SerializeField]
     private ParticleSystem mouthParticles;
@@ -69,8 +67,6 @@ public class KaijuController : MonoBehaviour
     private bool dashing;
     private bool meleeing;
     private bool firing;
-    private float colliderOffsetX;
-    private float fireSourceX;
     [SerializeField]
     private float fireSourceRotationLeft;
     [SerializeField]
@@ -80,9 +76,6 @@ public class KaijuController : MonoBehaviour
     void Start()
     {
         currentSpeed = speed;
-        colliderOffsetX = capsuleCollider.offset.x;
-        fireSourceX = fireSource.localPosition.x;
-        fireSource.rotation = Quaternion.Euler(0, 0, fireSourceRotationLeft);
     }
 
     // Update is called once per frame
@@ -118,16 +111,6 @@ public class KaijuController : MonoBehaviour
             {
                 flip = -1;
             }
-        }
-        capsuleCollider.offset = new Vector2(flip * colliderOffsetX, capsuleCollider.offset.y);
-        fireSource.localPosition = new Vector3(flip * fireSourceX, fireSource.localPosition.y);
-        if (flip == 1)
-        {
-            fireSource.rotation = Quaternion.Euler(0, 0, fireSourceRotationLeft);
-        }
-        else
-        {
-            fireSource.rotation = Quaternion.Euler(0, 0, fireSourceRotationRight);
         }
         if (transform.position.y >= winY && !winParticles.isPlaying)
         {
