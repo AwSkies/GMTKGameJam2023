@@ -48783,8 +48783,8 @@ MonoBehaviour:
   fireSources:
   - {fileID: 8357971572066033695}
   - {fileID: 7276459828406265585}
-  audioSource: {fileID: 0}
-  fireSound: {fileID: 0}
+  audioSource: {fileID: 2289571992658644843}
+  fireSound: {fileID: 8300000, guid: 83773c1757b45b948aead958c70acd28, type: 3}
 --- !u!114 &7163523746723550657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48818,8 +48818,8 @@ MonoBehaviour:
   fireSources:
   - {fileID: 4133670483269313534}
   - {fileID: 6759234118302060746}
-  audioSource: {fileID: 0}
-  fireSound: {fileID: 0}
+  audioSource: {fileID: 2289571992658644843}
+  fireSound: {fileID: 8300000, guid: 83773c1757b45b948aead958c70acd28, type: 3}
 --- !u!114 &3252986948919278549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -48853,10 +48853,15 @@ MonoBehaviour:
   fireSources:
   - {fileID: 8925489343041599941}
   - {fileID: 4579202715541080062}
-  audioSource: {fileID: 0}
-  fireSound: {fileID: 0}
+  audioSource: {fileID: 2289571992658644843}
+  fireSound: {fileID: 8300000, guid: 83773c1757b45b948aead958c70acd28, type: 3}
 --- !u!4 &1301294188257592110 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1784115072260735645, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
+  m_PrefabInstance: {fileID: 778369706701242803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &2289571992658644843 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1516414033408839384, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
   m_PrefabInstance: {fileID: 778369706701242803}
   m_PrefabAsset: {fileID: 0}
