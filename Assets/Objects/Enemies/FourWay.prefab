@@ -48633,7 +48633,7 @@ PrefabInstance:
     - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: fireSound
       value: 
-      objectReference: {fileID: 8300000, guid: a881a58ea63e32043993f7262e3ae5d6, type: 3}
+      objectReference: {fileID: 8300000, guid: 83773c1757b45b948aead958c70acd28, type: 3}
     - target: {fileID: 6127859597676279848, guid: 77aaa388cdafe174ab9dc3a10d63ea4b, type: 3}
       propertyPath: fireSources.Array.size
       value: 4
